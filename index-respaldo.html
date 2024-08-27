@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú del Restaurante</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        background-image: url("/img/background.png");
+        
+        background-color: #cccccc; /* Used if the image is unavailable */
+  height: 500px; /* You must set a specified height */
+  background-position: center; /* Center the image */
+  /*background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+        padding: 20px;
+        margin: 0;
+        box-sizing: border-box;
+      }
+
+      h1 {
+        text-align: center;
+        font-size: 28px;
+        margin-bottom: 20px;
+      }
+
+      .menu-container {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+
+      .section {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 475px;
+        box-sizing: border-box;
+      }
+
+      h2 {
+        font-size: 22px;
+        text-align: center;
+        margin-bottom: 15px;
+      }
+
+      .menu-item {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+        font-size: 18px;
+      }
+
+      .menu-item .name {
+        flex: 1;
+      }
+
+      .menu-item .price {
+        text-align: right;
+      }
+
+      #total {
+        font-size: 38px;
+        color: white;
+        font-weight: bold;
+        margin-top: 20px;
+        text-align: center;
+      }
+
+      button {
+        display: block;
+        margin: 20px auto;
+        padding: 10px 20px;
+        font-size: 18px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        max-width: 400px;
+        width: 100%;
+      }
+
+      button:hover {
+        background-color: #45a049;
+      }
+    </style>
+  </head>
+  <body>
+    <h1> <img src="\img\menu-logo.png"></h1>
+    <div class="menu-container">
+      <div class="section">
+        <h2><img src="\img\entradas-gratis.png"></h2>
+        <div class="menu-item">
+          <div class="name">Palitos de pan</div>
+          <div class="price">$2.75</div>
+          <input type="checkbox" value="2.75" onclick="calculateTotal()">
+        </div>
+        <div class="menu-item">
+          <div class="name">Canastillas de ceviches</div>
+          <div class="price">$2.75</div>
+          <input type="checkbox" value="2.75" onclick="calculateTotal()">
+        </div>
+        <div class="menu-item">
+          <div class="name">Mini salchichas con salsa de la casa</div>
+          <div class="price">$2.75</div>
+          <input type="checkbox" value="2.75" onclick="calculateTotal()">
+        </div>
+      </div>
+      <div class="section">
+        <h2><img src="\img\hot-dog.png"></h2>
+        <div class="menu-item">
+          <div class="name">Pretty Hawaii</div>
+          <div class="price">$7.50</div>
+          <input type="checkbox" value="7.50" onclick="calculateTotal()">
+        </div>
+        <div class="menu-item">
+          <div class="name">Chilli Flow</div>
+          <div class="price">$7.85</div>
+          <input type="checkbox" value="7.85" onclick="calculateTotal()">
+        </div>
+        <div class="menu-item">
+          <div class="name">Crunchy Swing</div>
+          <div class="price">$6.50</div>
+          <input type="checkbox" value="6.50" onclick="calculateTotal()">
+        </div>
+        <div class="menu-item">
+          <div class="name">Chilli Dog</div>
+          <div class="price">$6.75</div>
+          <input type="checkbox" value="6.75" onclick="calculateTotal()">
+        </div>
+        <div class="menu-item">
+          <div class="name">Clasic</div>
+          <div class="price">$3.50</div>
+          <input type="checkbox" value="3.50" onclick="calculateTotal()">
+        </div>
+        <div class="menu-item">
+          <div class="name">Hot Jalapeño</div>
+          <div class="price">$4.75</div>
+          <input type="checkbox" value="4.75" onclick="calculateTotal()">
+        </div>
+      </div>
+    </div>
+    <br>
+    <div class="menu-container">
+      <div class="section">
+        <h2><img src="\img\acompañamiento.png"></h2>
+        <div class="menu-item">
+          <div class="name">Aros de Cebolla</div>
+          <div class="price">$2.75</div>
+          <input type="checkbox" value="2.75" onclick="calculateTotal()">
+        </div>
+        <div class="menu-item">
+          <div class="name">Papas Wedges</div>
+          <div class="price">$4.75</div>
+          <input type="checkbox" value="4.75" onclick="calculateTotal()">
+        </div>
+      </div>
+      <div class="section">
+        <h2><img src="\img\malteadas.png"></h2>
+        <h3>Fresa / Chocolate</h3>
+        <div class="menu-item">
+          <div class="name">Pequeña</div>
+          <div class="price">$3.00</div>
+          <input type="checkbox" value="3.00" onclick="calculateTotal()">
+        </div>
+        <div class="menu-item">
+          <div class="name">Mediana</div>
+          <div class="price">$4.50</div>
+          <input type="checkbox" value="4.50" onclick="calculateTotal()">
+        </div>
+        <div class="menu-item">
+          <div class="name">Grande</div>
+          <div class="price">$5.75</div>
+          <input type="checkbox" value="5.75" onclick="calculateTotal()">
+        </div>
+      </div>
+    </div>
+    <br>
+    <div class="menu-container">
+      <div class="section">
+        <h2><img src="\img\sodas.png"></h2>
+        <div class="menu-item">
+          <div class="name">Fresa</div>
+          <div class="price">$1.00</div>
+          <input type="checkbox" value="1.00" onclick="calculateTotal()">
+        </div>
+        <div class="menu-item">
+          <div class="name">Fresa</div>
+          <div class="price">$1.00</div>
+          <input type="checkbox" value="1.00" onclick="calculateTotal()">
+        </div>
+        <div class="menu-item">
+          <div class="name">Coca-Cola</div>
+          <div class="price">$1.00</div>
+          <input type="checkbox" value="1.00" onclick="calculateTotal()">
+        </div>
+      </div>
+    </div>
+    <h1><img src="\img\combos.png"></h1>
+    <div class="menu-container">
+      <div class="section">
+        <h2><img src="\img\pa-todos.png"></h2>
+        <div class="menu-item">
+          <div class="name">- 5 Hot Dog a preferencia</div>
+        </div>
+        <div class="menu-item">
+          <div class="name">- 2 Ordenes de Aros de Cebolla</div>
+        </div>
+        <div class="menu-item">
+          <div class="name">- 2 Ordenes de Papas Wedges</div>
+          <div class="price">$25.00</div>
+          <input type="checkbox" value="25.00" onclick="calculateTotal()">
+        </div>
+        <div class="menu-item">
+          <div class="name">- 3 Malteadas</div>
+        </div>
+        <div class="menu-item">
+          <div class="name">- 2 Sodas</div>
+        </div>
+      </div>
+      <div class="section">
+        <h2><img src="\img\love-zone.png"></h2>
+        <div class="menu-item">
+          <div class="name">- 2 Hot Dog a preferencia</div>
+        </div>
+        <div class="menu-item">
+          <div class="name">- 1 Orden de Papas Wedges</div>
+        </div>
+        <div class="menu-item">
+          <div class="name">- 1 Orden de Aros de Cebolla</div>
+          <div class="price">$14.50</div>
+          <input type="checkbox" value="14.50" onclick="calculateTotal()">
+        </div>
+        <div class="menu-item">
+          <div class="name">- 2 Malteadas ó Soda</div>
+        </div>
+      </div>
+    </div>
+    <h1><img src="\img\personalizados.png"></h1>
+    <div class="menu-container">
+      <div class="section">
+        <h2><img src="\img\panes.png"></h2>
+        <div class="menu-item">
+          <div class="name">Pan Integral</div>
+        </div>
+        <div class="menu-item">
+          <div class="name">Pan Blanco</div>
+        </div>
+        <div class="menu-item">
+          <div class="name">Pan de Avena</div>
+        </div>
+        <div class="menu-item">
+          <div class="name">Pan de Masa Madre</div>
+        </div>
+        <div class="menu-item">
+          <div class="name">Pan Sin Gluten</div>
+        </div>
+        <div class="menu-item">
+          <div class="name">Pan Verde</div>
+        </div>
+      </div>
+      <div class="section">
+        <h2><img src="\img\adicionales.png"></h2>
+        <div class="menu-item">
+          <div class="name">Extra Chilli</div>
+          <div class="price">$0.50</div>
+          <input type="checkbox" value="0.50" onclick="calculateTotal()">
+        </div>
+        <div class="menu-item">
+          <div class="name">Extra Salsa de Piña</div>
+          <div class="price">$0.25</div>
+          <input type="checkbox" value="0.25" onclick="calculateTotal()">
+        </div>
+        <div class="menu-item">
+          <div class="name">Extra Chicharron</div>
+          <div class="price">$0.75</div>
+          <input type="checkbox" value="0.75" onclick="calculateTotal()">
+        </div>
+        <div class="menu-item">
+          <div class="name">Extra Jalapeño</div>
+          <div class="price">$0.25</div>
+          <input type="checkbox" value="0.25" onclick="calculateTotal()">
+        </div>
+        <div class="menu-item">
+          <div class="name">Extra Pico de Gallo</div>
+          <div class="price">$0.80</div>
+          <input type="checkbox" value="0.80" onclick="calculateTotal()">
+        </div>
+        <div class="menu-item">
+          <div class="name">Extra Salsas</div>
+          <div class="price">$0.35</div>
+          <input type="checkbox" value="0.35" onclick="calculateTotal()">
+        </div>
+        <div class="menu-item">
+          <div class="name">Extra Champiñones</div>
+          <div class="price">$0.35</div>
+          <input type="checkbox" value="0.35" onclick="calculateTotal()">
+        </div>
+        <div class="menu-item">
+          <div class="name">Extra Cebolla Caramelizada</div>
+          <div class="price">$0.45</div>
+          <input type="checkbox" value="0.45" onclick="calculateTotal()">
+        </div>
+      </div>
+    </div>
+    <h1><img src="\img\healthy-dog.png"></h1>
+    <div class="menu-container">
+      <div class="section">
+        <h2><img src="\img\hot-free.png"></h2>
+        <div class="menu-item">
+          <div class="name">Salchicha de</div>
+        </div>
+        <div class="menu-item">
+          <div class="name">Tofu, Lentejas</div>
+        </div>
+        <div class="menu-item">
+          <div class="name">ó de Soja</div>
+        </div>
+      </div>
+      <div class="section">
+        <h2><img src="\img\panes-healthy.png"></h2>
+        <div class="menu-item">
+          <div class="name">Pan Sin Gluten</div>
+        </div>
+        <div class="menu-item">
+          <div class="name">Pan Sin Leche / Sin Huevo</div>
+        </div>
+        <div class="menu-item">
+          <div class="name">y Sin Huevo</div>
+        </div>
+      </div>
+      <div class="section">
+        <h2><img src="\img\topping.png"></h2>
+        <div class="menu-item">
+          <div class="name">Lechuga</div>
+        </div>
+        <div class="menu-item">
+          <div class="name">Tomate</div>
+        </div>
+        <div class="menu-item">
+          <div class="name">Champiñones</div>
+        </div>
+        <div class="menu-item">
+          <div class="name">Pepinillos</div>
+        </div>
+        <div class="menu-item">
+          <div class="name">Alpaca</div>
+        </div>
+        <div class="menu-item">
+          <div class="name">Cebolla Caramelizada</div>
+        </div>
+        <div class="menu-item">
+          <div class="name">Trozos de Tofu</div>
+        </div>
+      </div>
+    </div>
+    <br>
+    <div class="menu-container">
+      <div class="section">
+        <h2><img src="\img\batidos-naturales.png"></h2>
+        <div class="menu-item">
+          <div class="name">Sandía</div>
+          <div class="name">Grande</div>
+          <div class="price">$3.50</div>
+          <input type="checkbox" value="3.50" onclick="calculateTotal()">
+        </div>
+        <div class="menu-item">
+          <div class="name">Tutifruti</div>
+          <div class="name">Mediano</div>
+          <div class="price">$2.50</div>
+          <input type="checkbox" value="2.50" onclick="calculateTotal()">
+        </div>
+        <div class="menu-item">
+          <div class="name">Green Juici</div>
+          <div class="name">Pequeño</div>
+          <div class="price">$1.75</div>
+          <input type="checkbox" value="1.75" onclick="calculateTotal()">
+        </div>
+      </div>
+    </div>
+    <div id="total">Total: $ 0.00</div>
+    <button onclick="finalizarPedido()">Realizar Pedido</button>
+    <script>
+      function calculateTotal() {
+        let total = 0;
+        const items = document.querySelectorAll('input[type="checkbox"]:checked');
+        items.forEach(item => {
+          total += parseFloat(item.value);
+        });
+        document.getElementById('total').textContent = "Total: $" + total;
+      }
+
+      function finalizarPedido() {
+        const total = document.getElementById('total').textContent.split("$")[1];
+        if (total > 0) {
+          alert("Pedido realizado. Monto total: $" + total);
+        } else {
+          alert("Por favor, selecciona al menos un producto.");
+        }
+      }
+    </script>
+  </body>
+</html>
